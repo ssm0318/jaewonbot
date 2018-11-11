@@ -43,7 +43,7 @@ class BasicController < ApplicationController
             if ["ㅎㅇ", "안녕", "안녕하세요!", "hi", "hello", '하이', "안녕?"].include? @response
                 @response = {
                   message: {
-                      text: "#{@user.name}님, 안녕하세요!"
+                      text: "#{@user.name}님, 안녕하세요! 또 뵙네요!"
                   },
                   keyboard: {
                     type: "text"
