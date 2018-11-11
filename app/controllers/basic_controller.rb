@@ -30,7 +30,7 @@ class BasicController < ApplicationController
                 @user.save
                 @response = {
                     message: {
-                        text: "#{@user.name}님 환영합니다!"
+                        text: "#{@user.name}님 반갑습니다!\n아무말이나 적어주세요!"
                     },
                     keyboard: {
                         type: "text"
@@ -50,7 +50,7 @@ class BasicController < ApplicationController
                 }
                 render json: @response, status: :ok
             else
-                response_choices = ["뀨뀨꺄꺄!!!!", "뀨?", "데헷", "밍...", "낄낄낄", ">_<", "호이호이호잇 @_@", "웬열~~~", "으휴~~ 바보~~", "ㅗ", "^ㅗ^", "머라구~~?!", "화나떠??!?", "뿌잉뿌잉 ><"]
+                response_choices = ["뀨뀨꺄꺄!!!!", "뀨?", "데헷 >_<", "밍...", "호이호이호잇 @_@", "웬열~~~", "으휴~~ 바보~~", "ㅗ", "^ㅗ^", "머라구~~?!", "화나떠??!?"]
                 if(rand(1...8) % 3 != 0)
                     msg = response_choices.sample
                 else
