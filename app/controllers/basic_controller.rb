@@ -62,9 +62,12 @@ class BasicController < ApplicationController
                   render json: @response, status: :ok
             else
                 response_choices = ["뀨뀨꺄꺄!!!!", "뀨?", "데헷 >_<", "밍...", "호이호이호잇 @_@", "웬열~~~", "으휴~~ 바보~~", "ㅗ", "^ㅗ^", "머라구~~?!", "화나떠??!?", "즐~", "뿌잉뿌잉",
-                                    "얼씨구~", "풉", "ㅋ", "헿헿", "까까꾸꾸?", "기싱꿍꼬또", "까까꾹ㄱ끄끆ㄲ꺄꺄끾ㄲ", "뿡!", "아휴 냄새~~", "꿹뒓붽쉜뷁뷁뛟", "이응", "오졌다뤼~~~~", "지렸다뤼~~~"]
-                if(rand(0...8) % 3 == 0)
+                                    "얼씨구~", "풉", "ㅋ", "헿헿", "까까꾸꾸?", "기싱꿍꼬또", "까까꾹ㄱ끄끆ㄲ꺄꺄끾ㄲ", "뿡!", "아휴 냄새~~", "꿹뒓붽쉜뷁뷁뛟", "<3", "모해?"]
+                key = rand(1...9)
+                if(key % 5 == 0)
                     msg = @response
+                elsif(key % 3 == 0)
+                    msg = "#{@user.name} 바보"
                 else
                     msg = response_choices.sample
                 end
