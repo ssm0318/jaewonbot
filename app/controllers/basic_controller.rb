@@ -40,7 +40,9 @@ class BasicController < ApplicationController
                 render json: @response, status: :ok
             end
         else
-            Chat.create(user_id: @user.id, content: @response)
+            if @user.id != 2
+                Chat.create(user_id: @user.id, content: @response)
+            end
             if  @response == "재원봇 안녕!!"
                 @response = {
                   message: {
