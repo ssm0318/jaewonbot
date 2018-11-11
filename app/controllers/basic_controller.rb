@@ -13,7 +13,6 @@ class BasicController < ApplicationController
         @user_key = params[:user_key]
         @user = User.find_or_create_by(user_key: @user_key)
 
-        
         if @user.name == nil
             if @response == "안녕하세요!"
                 @response = {
