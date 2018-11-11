@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'pry-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
@@ -26,13 +27,11 @@ gem 'puma', '~> 3.7'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'pry-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
-  gem 'rails_db'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -41,6 +40,7 @@ end
 
 group :production do
   gem 'pg', '~> 1.1', '>= 1.1.3'
+  gem 'rails_db'
   # gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 end
 
