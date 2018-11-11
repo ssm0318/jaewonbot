@@ -33,7 +33,7 @@ class BasicController < ApplicationController
                         text: "#{@user.name}님 반갑습니다!\n무엇을 도와드릴까요?"
                     },
                     keyboard: {
-                        type: "button",
+                        type: "buttons",
                         buttons: ["심심해", "너는 뭐하는 애야?", "하고 싶은 말이 있어", "TMI 대잔치"]
                     }
                 }
@@ -47,7 +47,7 @@ class BasicController < ApplicationController
                       text: "#{@user.name}님, 안녕하세요! 또 뵙네요!\n무엇을 도와드릴까요?"
                   },
                   keyboard: {
-                    type: "button",
+                    type: "buttons",
                     buttons: ["심심해", "너는 뭐하는 애야?", "하고 싶은 말이 있어", "TMI 대잔치"]
                   }
                 }
@@ -68,7 +68,7 @@ class BasicController < ApplicationController
                         text: "네!!!"
                     },
                     keyboard: {
-                      type: "button",
+                      type: "buttons",
                       buttons: ["심심해", "너는 뭐하는 애야?", "하고 싶은 말이 있어", "TMI 대잔치"]
                     }
                   }
@@ -114,7 +114,7 @@ class BasicController < ApplicationController
                 key = rand(1...9)
                 if(key % 5 == 0)
                     msg = @response
-                elsif(key % 3 == 0)
+                elsif(key % 6 == 0)
                     msg = "#{@user.name} 바보"
                 else
                     msg = response_choices.sample
