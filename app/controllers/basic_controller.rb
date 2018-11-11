@@ -33,7 +33,7 @@ class BasicController < ApplicationController
                         text: "#{@user.name}님 반갑습니다!\n무엇을 도와드릴까요?"
                     },
                     keyboard: {
-                        type: "button"
+                        type: "button",
                         buttons: ["심심해", "너는 뭐하는 애야?", "하고 싶은 말이 있어"]
                     }
                 }
@@ -67,7 +67,7 @@ class BasicController < ApplicationController
                         text: "네!!!"
                     },
                     keyboard: {
-                      type: "button"
+                      type: "button",
                       buttons: ["심심해", "너는 뭐하는 애야?", "하고 싶은 말이 있어"]
                     }
                   }
@@ -90,7 +90,8 @@ class BasicController < ApplicationController
                     keyboard: {
                         type: "text"
                     }
-                    render json: @response, status: :ok
+                }
+                render json: @response, status: :ok
             else
                 response_choices = ["뀨뀨꺄꺄!!!!", "뀨?", "데헷 >_<", "밍...", "호이호이호잇 @_@", "웬열~~~", "으휴~~ 바보~~", "ㅗ", "^ㅗ^", "머라구~~?!", "화나떠??!?", "즐~", "뿌잉뿌잉",
                                     "얼씨구~", "풉", "ㅋ", "헿헿", "까까꾸꾸?", "기싱꿍꼬또", "까까꾹ㄱ끄끆ㄲ꺄꺄끾ㄲ", "뿡!", "아휴 냄새~~", "꿹뒓붽쉜뷁뷁뛟", "<3", "모해?"]
