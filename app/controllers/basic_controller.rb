@@ -30,7 +30,7 @@ class BasicController < ApplicationController
                 @user.save
                 @response = {
                     message: {
-                        text: "#{@user.name}님 반갑습니다!\n무엇을 도와드릴까요?"
+                        text: "#{@user.name}님 반갑습니다!\n무엇을 도와드릴까요? (언제든지 \"재원봇\"을 입력해 저를 소환하실 수 있어요!)"
                     },
                     keyboard: {
                         type: "buttons",
@@ -44,7 +44,7 @@ class BasicController < ApplicationController
             if  @response == "재원봇 안녕!!"
                 @response = {
                   message: {
-                      text: "#{@user.name}님, 안녕하세요! 또 뵙네요!\n무엇을 도와드릴까요?"
+                      text: "#{@user.name}님, 안녕하세요! 또 뵙네요!\n무엇을 도와드릴까요? (언제든지 \"재원봇\"을 입력해 저를 소환하실 수 있어요!)"
                   },
                   keyboard: {
                     type: "buttons",
@@ -76,7 +76,7 @@ class BasicController < ApplicationController
             elsif @response == "너는 뭐하는 애야?"
                 @response = {
                     message: {
-                        text: "저에 대해 궁금해해주셔서 감사합니다! 저는 곧 <공공재원>이라는 서비스를 돕기 위해 다시 태어날 재원봇이예요! \"재원봇\"을 입력해 언제든 저를 소환해주세요!"
+                        text: "저에 대해 궁금해해주셔서 감사합니다! 저는 [재원]이 느릿느릿 준비하고 있는 <공공재원>이라는 서비스를 돕기 위해 다시 태어날 재원봇이예요!"
                     },
                     keyboard: {
                       type: "text"
