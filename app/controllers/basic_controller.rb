@@ -39,7 +39,8 @@ class BasicController < ApplicationController
                 render json: @response, status: :ok
             end
         else
-            if @response == "안녕하세요!"
+            Chat.create(user_id: @user.id, content: @response)
+            if ["ㅎㅇ", "안녕", "안녕하세요!", "hi", "hello", '하이', "안녕?"].include? @response
                 @response = {
                   message: {
                       text: "#{@user.name}님, 안녕하세요!"
