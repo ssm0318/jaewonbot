@@ -170,6 +170,8 @@ class BasicController < ApplicationController
                 render json: @response, status: :ok
             end            
         end
-        Response.create(content: my_response, content_type: "not yet")
+        if @user.id != 1
+            Response.create(content: my_response, content_type: "not yet")
+        end
     end
 end
