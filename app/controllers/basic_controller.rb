@@ -1,11 +1,20 @@
 class BasicController < ApplicationController
     def new_friend
+        Log.create(user_key: params[:user_key], message: "new friend")
+        msg = {}
+        render json: msg, status: :ok
     end
 
     def deleted_friend
+        Log.create(user_key: params[:user_key], message: "deleted friend")
+        msg = {}
+        render json: msg, status: :ok
     end
 
     def left_chat
+        Log.create(user_key: params[:user_key], message: "left chatroom")
+        msg = {}
+        render json: msg, status: :ok
     end
 
     def keyboard_init
