@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181119125746) do
+ActiveRecord::Schema.define(version: 20181112150731) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20181119125746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_chats_on_user_id"
+    t.index [nil], name: "index_chats_on_user"
   end
 
   create_table "logs", force: :cascade do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20181119125746) do
     t.datetime "updated_at", null: false
     t.index ["content_type"], name: "index_responses_on_content_type"
     t.index ["user_id"], name: "index_responses_on_user_id"
+    t.index [nil], name: "index_responses_on_user"
   end
 
   create_table "users", force: :cascade do |t|
