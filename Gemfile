@@ -7,9 +7,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'pry-rails'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'sqlite3'
+gem 'pry', '~> 0.12.0'
+gem 'pry-rails', '~> 0.3.4'
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
@@ -28,7 +28,6 @@ gem 'puma', '~> 3.7'
 # gem 'rack-cors'
 
 group :development, :test do
-  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -41,7 +40,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 1.1', '>= 1.1.3'
+  # gem 'pg', '~> 1.1', '>= 1.1.3'
   gem 'rails_db'
   # gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 end
